@@ -10,7 +10,7 @@
         v-model="date"
       />
       <input title="Content" v-model="content" />
-      <button type="submit" title="go!" />
+      <input type="submit" value="Afegir àpat" title="Afegir àpat" />
     </form>
   </div>
 </template>
