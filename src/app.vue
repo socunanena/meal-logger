@@ -1,28 +1,23 @@
 <template>
   <div>
-    <form v-on:submit.prevent="addMeal()">
-      <input title="Date" v-model="date" />
-      <input title="Content" v-model="content" />
-      <button type="submit" title="go!" />
-    </form>
+    <meal-input v-on:add-meal="addMeal" />
   </div>
 </template>
 
 <script>
+  import MealInput from './components/meal-input/index';
+
   export default {
     name: 'Calendar',
+    components: {
+      MealInput,
+    },
     data: () => ({
-      date: null,
-      content: null,
       meals: [],
     }),
-    computed: {},
     methods: {
-      addMeal() {
-        this.meals.push({
-          timestamp: new Date(this.date),
-          content: this.content,
-        });
+      addMeal(meal) {
+        this.meals.push(meal);
       },
     },
   };
