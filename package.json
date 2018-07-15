@@ -11,7 +11,8 @@
   "author": "Natàlia Calvet i Vidal <natalia.cavi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue2-datepicker": "^2.0.4"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
