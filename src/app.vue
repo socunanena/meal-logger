@@ -1,16 +1,19 @@
 <template>
   <div>
-    <meal-input v-on:add-meal="addMeal" />
+    <meal-input v-on:add-meal="addMeal"/>
+    <day-view :meals="meals"/>
   </div>
 </template>
 
 <script>
   import MealInput from './components/meal-input/index';
+  import DayView from './components/day-view/index';
 
   export default {
     name: 'Calendar',
     components: {
       MealInput,
+      DayView,
     },
     data: () => ({
       meals: [],
