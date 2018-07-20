@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "nuxt": "^1.4.1",
+    "vue-full-calendar": "^2.6.1",
     "vue2-datepicker": "^2.0.4"
   },
   "devDependencies": {
