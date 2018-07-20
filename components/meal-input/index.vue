@@ -1,14 +1,16 @@
 <template>
   <div>
     <form v-on:submit.prevent="createMeal">
-      <date-picker
-              type="datetime"
-              format="YYYY-MM-DD HH:mm"
-              :lang="timePickerOptions.lang"
-              first-day-of-week.number=1
-              :time-picker-options="timePickerOptions.timeSteps"
-              v-model="date"
-      />
+      <no-ssr>
+        <date-picker
+                type="datetime"
+                format="YYYY-MM-DD HH:mm"
+                :lang="timePickerOptions.lang"
+                first-day-of-week.number=1
+                :time-picker-options="timePickerOptions.timeSteps"
+                v-model="date"
+        />
+      </no-ssr>
       <input title="Content" v-model="content"/>
       <input type="submit" value="Afegir àpat" title="Afegir àpat"/>
     </form>
@@ -16,13 +18,8 @@
 </template>
 
 <script>
-  import DatePicker from 'vue2-datepicker';
-
   export default {
     name: 'MealInput',
-    components: {
-      DatePicker,
-    },
     data: () => ({
       date: new Date(),
       content: undefined,

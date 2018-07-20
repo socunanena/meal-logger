@@ -1,30 +1,24 @@
 <template>
   <div>
     <div>
-      <date-picker
-              type="date"
-              format="YYYY-MM-DD"
-              :lang="timePickerOptions.lang"
-              first-day-of-week.number=1
-              v-model="day"
-      />
+      <no-ssr>
+        <date-picker
+                type="date"
+                format="YYYY-MM-DD"
+                :lang="timePickerOptions.lang"
+                first-day-of-week.number=1
+                v-model="day"
+        />
+      </no-ssr>
     </div>
-    <ul>
-      <li v-for="meal in mealsOfTheDay">
-        <strong>{{ formatDate(meal.date, 'YYYY-MM-DD HH:mm') }} -</strong>
-        {{ meal.content }}
-      </li>
-    </ul>
   </div>
 </template>
 
 <script>
   import fecha from 'fecha';
-  import DatePicker from 'vue2-datepicker';
 
   export default {
     name: 'DayView',
-    components: { DatePicker },
     props: ['meals'],
     data() {
       return {

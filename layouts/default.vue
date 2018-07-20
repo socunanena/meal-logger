@@ -1,19 +1,16 @@
 <template>
   <div>
     <meal-input v-on:add-meal="addMeal"/>
-    <day-view :meals="meals"/>
+    <nuxt/>
   </div>
 </template>
 
 <script>
-  import MealInput from './components/meal-input/index';
-  import DayView from './components/day-view/index';
+  import MealInput from '~/components/meal-input/index.vue';
 
   export default {
-    name: 'Calendar',
     components: {
       MealInput,
-      DayView,
     },
     data: () => ({
       meals: [],
@@ -23,8 +20,5 @@
         this.meals.push(meal);
       },
     },
-  };
+  }
 </script>
-
-<style scoped>
-</style>
