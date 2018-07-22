@@ -11,6 +11,7 @@
   "author": "Natàlia Calvet i Vidal <natalia.cavi@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "nuxt": "^1.4.1",
     "vue-full-calendar": "^2.6.1",
     "vue2-datepicker": "^2.0.4"

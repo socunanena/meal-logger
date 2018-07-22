@@ -6,24 +6,15 @@
 
 <script>
   import fecha from 'fecha';
+  import axios from 'axios';
   // import 'fullcalendar/dist/locale/ca';
 
   export default {
     head: {
       title: 'Meals',
     },
-    asyncData() {
-      const mealsOfTheDay = [
-        { date: new Date(2018, 6, 20, 10, 30), content: 'esmorzar' },
-        { date: new Date(2018, 6, 20, 13, 30), content: 'dinar' },
-        { date: new Date(2018, 6, 20, 20, 30), content: 'sopar' },
-      ];
-
+    data() {
       return {
-        mealsOfTheDay: mealsOfTheDay.map(m => ({
-          start: m.date,
-          title: m.content,
-        })),
         config: {
           header: {
             left: 'today',
@@ -43,6 +34,16 @@
           slotLabelFormat: 'HH:mm',
           themeSystem: 'bootstrap4',
         },
+      };
+    },
+    async asyncData() {
+      const { data: { meals } } = await axios.get('http://localhost:3001/api/meals');
+
+      return {
+        mealsOfTheDay: meals.map(m => ({
+          start: m.date,
+          title: m.content,
+        })),
       };
     },
   };
