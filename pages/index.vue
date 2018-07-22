@@ -33,6 +33,7 @@
           columnHeaderFormat: 'dddd',
           slotLabelFormat: 'HH:mm',
           themeSystem: 'bootstrap4',
+          timezone: 'local',
         },
       };
     },
